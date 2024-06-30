@@ -13,7 +13,8 @@ class
 class
 class
 class
-class
+class UpdatePost(graphene.Mutation):
+    
 class Mutation(graphene.ObjectType):
     create_category = CreateCategories.Field()
     update_category = UpdateCategories.Field()
