@@ -10,6 +10,9 @@ class
 class Categories(models.Model):
     categoryname = models.CharField(max_length=255)
     
+    def __str__(self):
+        return self.categoryname
+    
     
 class Post(models.Model):
     title = models.CharField(max_length=255)
