@@ -1,3 +1,3 @@
 from django.db import models
-
-# Create your models here.
+from django.contrib.auth.models import User
+from boma.utils import unique_slug_generator
