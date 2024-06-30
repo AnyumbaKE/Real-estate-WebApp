@@ -14,4 +14,5 @@ class Post(models.Model):
     slug = models.SlugField(max_length=255, null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     img = models.ImageField(upload_to='blog', null=True)
+    body = models.TextField(blank=False, null=True)
     
