@@ -37,6 +37,7 @@ class UpdatePost(graphene.Mutation):
             post_instance.save()
             post_instance.posts.set(posts)
             return UpdatePost(ok=ok, post=post_instance)
+        return UpdatePost(ok=ok, post=None)
     
 class Mutation(graphene.ObjectType):
     create_category = CreateCategories.Field()
