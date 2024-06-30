@@ -11,6 +11,11 @@ class PostType(DjangoObjectType):
         model = Post
 
 class Query(ObjectType):
+    category = graphene.Field(CategoriesType, id=graphene.Int())
+    post = graphene.Field(PostType, id=graphene.Int())
+    categories = graphene.List(CategoriesType)
+    posts = graphene.List(PostType)
+    
 class CategoriesInput(graphene.InputObjectType):
     id = graphene.ID()
     categoryname = graphene.String()
