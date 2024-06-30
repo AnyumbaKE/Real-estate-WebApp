@@ -22,6 +22,7 @@ class Query(ObjectType):
         if id is not None:
             return Categories.objects.get(pk=id)
         return None
+    
     def resolve_post(self, info, **kwargs):
         id = kwargs.get('id')
         
@@ -31,6 +32,10 @@ class Query(ObjectType):
     
     def resolve_categories(self, info, **kwargs):
         return Categories.objects.all()
+    
+    def resolve_posts(self, info, **kwargs):
+        return Post.objects.all()
+    
 class CategoriesInput(graphene.InputObjectType):
     id = graphene.ID()
     categoryname = graphene.String()
