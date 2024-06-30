@@ -11,6 +11,9 @@ class
 class
 class PostInput(graphene.InputObjectType):
     id = graphene.ID()
+    title = graphene.String()
+    title_tag = graphene.String()
+    
 
 class CreateCategories(graphene.Mutation):
     class Arguments:
