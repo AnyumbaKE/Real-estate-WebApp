@@ -38,6 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'graphene_django',
+    'accounts.apps.AccountsConfig',
+    'Ages.apps.AgesConfig',
+    'blog',
+    'contacts.apps.ContactsConfig',
+    'listings.apps.ListingsConfig',
+    'pages.apps.PagesConfig',
+    'realtors.apps.RealtorsConfig',
+    
 ]
 
 MIDDLEWARE = [
