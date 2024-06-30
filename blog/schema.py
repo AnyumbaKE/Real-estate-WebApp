@@ -15,7 +15,11 @@ class
 class CreatePost(graphene):
     class Arguments:
         input = PostInput(required=True)
-        
+    
+    ok = graphene.Boolean()
+    post = graphene.Field(PostType)
+
+      
 class UpdatePost(graphene.Mutation):
     class Arguments:
         id = graphene.Int(required=True)
