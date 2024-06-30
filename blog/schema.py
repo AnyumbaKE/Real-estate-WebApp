@@ -12,7 +12,10 @@ class
 class
 class
 class
-class
+class CreatePost(graphene):
+    class Arguments:
+        input = PostInput(required=True)
+        
 class UpdatePost(graphene.Mutation):
     class Arguments:
         id = graphene.Int(required=True)
