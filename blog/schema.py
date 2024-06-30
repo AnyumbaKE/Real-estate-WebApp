@@ -22,6 +22,13 @@ class UpdateCategories(graphene.Mutation):
     @staticmethod
     def mutate(root, info, id, input=None):
         ok = False
+        Category_instance = Categories.objects.get(pk=id)
+        if Category_instance:
+            ok = True
+            Category_instance.name = input.categoryname
+            Category_instance.save()
+            return UpdateCategories(ok=ok, actor=Category_instance)
+        return UpdateCategories(ok=ok, category=None)
         
 
 
