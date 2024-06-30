@@ -21,6 +21,10 @@ class UpdatePost(graphene.Mutation):
     ok = graphene.Boolean()
     post = graphene.Field(PostType)
     
+    @staticmethod
+    def mutate(root, info, id, input=None):
+        ok = False
+    
 class Mutation(graphene.ObjectType):
     create_category = CreateCategories.Field()
     update_category = UpdateCategories.Field()
