@@ -33,5 +33,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('AgesVerification/', include('Ages.urls')),
     path('blog/', include('blog.urls')),
-    path('contacts/', include('contacts.urls'))
+    path('contacts/', include('contacts.urls')),
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
+    path('listings/', include('listings.urls')),
 ]
