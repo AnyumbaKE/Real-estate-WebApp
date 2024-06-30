@@ -7,7 +7,10 @@ from boma.utils import unique_slug_generator
 
 class
 class
-class
+class Categories(models.Model):
+    categoryname = models.CharField(max_length=255)
+    
+    
 class Post(models.Model):
     title = models.CharField(max_length=255)
     title_tag = models.CharField(max_length=255, default='Blog Post')
