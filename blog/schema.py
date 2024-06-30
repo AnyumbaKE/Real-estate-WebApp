@@ -6,7 +6,10 @@ class CategoriesType(DjangoObjectType):
     class Meta:
         model = Categories
 
-class
+class PostType(DjangoObjectType):
+    class Meta:
+        model = Post
+
 class
 class CategoriesInput(graphene.InputObjectType):
     id = graphene.ID()
