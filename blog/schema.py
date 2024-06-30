@@ -21,6 +21,7 @@ class Query(ObjectType):
         
         if id is not None:
             return Categories.objects.get(pk=id)
+        return None
     
 class CategoriesInput(graphene.InputObjectType):
     id = graphene.ID()
