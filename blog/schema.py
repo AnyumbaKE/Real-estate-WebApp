@@ -8,7 +8,7 @@ class CategoriesType(DjangoObjectType):
 
 class
 class
-class
+class CategoriesInput(graphene.InputObjectType):
 class PostInput(graphene.InputObjectType):
     id = graphene.ID()
     title = graphene.String()
