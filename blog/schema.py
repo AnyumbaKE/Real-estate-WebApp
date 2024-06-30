@@ -16,6 +16,12 @@ class Query(ObjectType):
     categories = graphene.List(CategoriesType)
     posts = graphene.List(PostType)
     
+    def resolve_category(self, info, **kwargs):
+        id = kwargs.get('id')
+        
+        if id is not None:
+            return Categories.objects.get(pk=id)
+    
 class CategoriesInput(graphene.InputObjectType):
     id = graphene.ID()
     categoryname = graphene.String()
