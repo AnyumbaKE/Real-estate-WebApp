@@ -15,4 +15,6 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     img = models.ImageField(upload_to='blog', null=True)
     body = models.TextField(blank=False, null=True)
+    comments = models.ManyToManyField(PostComment, blank=True)
+    post_date = models.DateTimeField(auto_now_add=True)
     
