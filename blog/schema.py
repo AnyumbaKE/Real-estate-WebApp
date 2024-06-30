@@ -10,7 +10,17 @@ class
 class
 class
 class
-class
+class CreateCategories(graphene.Mutation):
+    class Arguments:
+        input = CategoriesInput(required=True)
+    
+    ok = graphene.Boolean()
+    category = graphene.Field(CategoriesType)
+    
+    @staticmethod
+    def mutate(root, info, input=None):
+        ok = True
+        
 class UpdateCategories(graphene.Mutation):
     class Arguments:
         id = graphene.Int(required=True)
@@ -30,7 +40,6 @@ class UpdateCategories(graphene.Mutation):
             return UpdateCategories(ok=ok, actor=Category_instance)
         return UpdateCategories(ok=ok, category=None)
         
-
 
 class CreatePost(graphene.Mutation):
     class Arguments:
