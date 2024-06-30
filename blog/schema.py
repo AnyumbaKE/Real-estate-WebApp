@@ -29,6 +29,8 @@ class Query(ObjectType):
             return Post.objects.get(pk=id)
         return None
     
+    def resolve_categories(self, info, **kwargs):
+        return Categories.objects.all()
 class CategoriesInput(graphene.InputObjectType):
     id = graphene.ID()
     categoryname = graphene.String()
