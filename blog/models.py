@@ -9,6 +9,10 @@ class PostComment(models.Model):
     sender = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
     create_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f'{self.sender.get_username()}'
+
 class Categories(models.Model):
     categoryname = models.CharField(max_length=255)
     
