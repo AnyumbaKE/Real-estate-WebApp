@@ -13,7 +13,10 @@ class PostInput(graphene.InputObjectType):
     id = graphene.ID()
     title = graphene.String()
     title_tag = graphene.String()
-    
+    slug = graphene.String()
+    author = graphene.String()
+    body = graphene.String()
+    category = graphene.String
 
 class CreateCategories(graphene.Mutation):
     class Arguments:
