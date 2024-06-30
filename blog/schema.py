@@ -11,7 +11,12 @@ class
 class
 class
 class
-class
+class UpdateCategories(graphene.Mutation):
+    class Arguments:
+        id = graphene.Int(required=True)
+        input = CategoriesInput(required=True)
+
+
 class CreatePost(graphene.Mutation):
     class Arguments:
         input = PostInput(required=True)
