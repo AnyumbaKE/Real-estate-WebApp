@@ -32,4 +32,6 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('accounts/', include('accounts.urls')),
     path('AgesVerification/', include('Ages.urls')),
+    path('blog/', include('blog.urls')),
+    path('contacts/', include('contacts.urls'))
 ]
