@@ -12,12 +12,15 @@ class
 class
 class
 class
-class CreatePost(graphene):
+class CreatePost(graphene.Mutation):
     class Arguments:
         input = PostInput(required=True)
     
     ok = graphene.Boolean()
     post = graphene.Field(PostType)
+    
+    @staticmethod
+    def mutate(root, info, input=None):
 
       
 class UpdatePost(graphene.Mutation):
