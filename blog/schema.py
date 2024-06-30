@@ -15,6 +15,9 @@ class UpdateCategories(graphene.Mutation):
     class Arguments:
         id = graphene.Int(required=True)
         input = CategoriesInput(required=True)
+    
+    ok = graphene.Boolean()
+    category = graphene.Field(CategoriesType)
 
 
 class CreatePost(graphene.Mutation):
