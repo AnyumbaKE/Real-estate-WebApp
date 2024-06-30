@@ -9,7 +9,9 @@ class CategoriesType(DjangoObjectType):
 class
 class
 class
-class
+class PostInput(graphene.InputObjectType):
+    id = graphene.ID()
+
 class CreateCategories(graphene.Mutation):
     class Arguments:
         input = CategoriesInput(required=True)
