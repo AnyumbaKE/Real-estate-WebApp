@@ -28,6 +28,12 @@ class CreatePost(graphene.Mutation):
             if post is None:
                 return CreatePost(ok=False, post=None)
             posts.append(post)
+        post_instance = Post(
+            title=input.title,
+        )
+        post_instance.save()
+        post_instance.posts.set(posts)
+        return CreatePost(ok=ok, post=post_instance)
 
       
 class UpdatePost(graphene.Mutation):
