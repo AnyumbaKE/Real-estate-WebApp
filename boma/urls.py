@@ -37,3 +37,6 @@ urlpatterns = [
     path('graphql/', GraphQLView.as_view(graphiql=True)),
     path('listings/', include('listings.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
