@@ -46,9 +46,13 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'listings.apps.ListingsConfig',
     'pages.apps.PagesConfig',
-    'realtors.apps.RealtorsConfig',
-    
+    'realtors.apps.RealtorsConfig', 
+     
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'blog.schema.schema'
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
