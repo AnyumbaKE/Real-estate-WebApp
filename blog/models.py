@@ -17,4 +17,7 @@ class Post(models.Model):
     body = models.TextField(blank=False, null=True)
     comments = models.ManyToManyField(PostComment, blank=True)
     post_date = models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey(Categories, null=True, on_delete=models.PROTECT, related_name='category_set')
     
+    def __str__(self):
+        return self.title + ' | ' + str(self.author)
