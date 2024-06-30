@@ -20,7 +20,10 @@ class CreateCategories(graphene.Mutation):
     @staticmethod
     def mutate(root, info, input=None):
         ok = True
-        
+        category_instance = Categories(name=input.name)
+        category_instance.save()
+        return CreateCategories(ok=ok, category=category_instance)
+
 class UpdateCategories(graphene.Mutation):
     class Arguments:
         id = graphene.Int(required=True)
