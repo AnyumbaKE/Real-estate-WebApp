@@ -21,6 +21,13 @@ class CreatePost(graphene.Mutation):
     
     @staticmethod
     def mutate(root, info, input=None):
+        ok = True
+        posts = []
+        for post_input in input.posts:
+            post = Post.objects.get(pk=post_input.id)
+            if post is None:
+                return CreatePost(ok=False, post=None)
+            posts.append(post)
 
       
 class UpdatePost(graphene.Mutation):
