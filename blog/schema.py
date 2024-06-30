@@ -10,7 +10,7 @@ class PostType(DjangoObjectType):
     class Meta:
         model = Post
 
-class
+class Query(ObjectType):
 class CategoriesInput(graphene.InputObjectType):
     id = graphene.ID()
     categoryname = graphene.String()
