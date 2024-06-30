@@ -7,7 +7,8 @@ from boma.utils import unique_slug_generator
 
 class PostComment(models.Model):
     sender = models.ForeignKey(User, on_delete=models.CASCADE)
-    
+    message = models.TextField()
+    create_at = models.DateTimeField(auto_now_add=True)
 class Categories(models.Model):
     categoryname = models.CharField(max_length=255)
     
