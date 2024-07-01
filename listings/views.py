@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 
-from listings.choices import price_choices , bedroom_choices , county_choices, type_choices
+from listings.choices import price_choices , bedroom_choices , state_choices, type_choices
 
 from .models import Listing
 
@@ -35,10 +35,10 @@ def search(request):
 		if city:
 			queryset_list = queryset_list.filter(city__iexact=city)
 
-	if 'county' in request.GET:
-		county = request.GET['state']
-		if county:
-			queryset_list = queryset_list.filter(county__iexact=county)
+	if 'state' in request.GET:
+		state = request.GET['state']
+		if state:
+			queryset_list = queryset_list.filter(state__iexact=state)
 
 	if 'bedrooms' in request.GET:
 		bedrooms = request.GET['bedrooms']
@@ -53,7 +53,7 @@ def search(request):
 
 	return render(request,'listings/search.html',{
 		'listings' : queryset_list,
-        'county_choices' : county_choices,
+        'state_choices' : state_choices,
         'bedroom_choices' : bedroom_choices,
         'price_choices' : price_choices,
         'type_choices' : type_choices,

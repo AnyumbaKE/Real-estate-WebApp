@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 
-from listings.choices import price_choices , bedroom_choices , county_choices
+from listings.choices import price_choices , bedroom_choices , state_choices
 from listings.models import Listing
 from realtors.models import Realtor
 
@@ -8,7 +8,7 @@ from realtors.models import Realtor
 def index(request):
 	listings = Listing.objects.order_by('-list_date').filter(is_published=True);
 	return render(request , 'pages/index.html',{'listings' : listings ,
-        'county_choices' : county_choices,
+        'state_choices' : state_choices,
         'bedroom_choices' : bedroom_choices,
         'price_choices' : price_choices,
 

@@ -34,7 +34,7 @@ price_choices = {
   '500000000':'Kshs 500M+',
 }
 
-county_choices = {
+state_choices = {
         'MSA-001': 'Mombasa',
         'KWL-002': 'Kwale',
         'KLF-003': 'kilifi',
