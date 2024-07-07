@@ -298,7 +298,8 @@ h2,
 h3,
 .h3 {
     font-size: 30px;
-    font-weight: 600;  
+    font-weight: 600;
+    align-items: center;  
 }
 h4,
 .h4 {
