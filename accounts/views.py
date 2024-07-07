@@ -48,7 +48,7 @@ def login_view(request):
 		if user is not None:
 			auth.login(request,user)
 			messages.success(request,'You Are Now LoggedIn')
-			return redirect('accounts:dashborad')
+			return redirect('accounts:dashboard')
 		else:
 			messages.error(request,'Invalid Credentials')
 			return redirect('accounts:login_view')
@@ -62,6 +62,6 @@ def logout(request):
 		return redirect('pages:index')
 
 
-def dashborad(request):
+def dashboard(request):
 	user_contact = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
-	return render(request,'accounts/dashborad.html',{'contacts' : user_contact})
+	return render(request,'accounts/dashboard.html',{'contacts' : user_contact})
